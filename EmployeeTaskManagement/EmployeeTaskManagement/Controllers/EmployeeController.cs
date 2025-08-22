@@ -26,13 +26,10 @@ namespace EmployeeTaskManagement.Controllers
             return Ok(employees);
         }
 
-        [HttpGet]
-
-        [Route(" {EmployeeId:int}")]
-
-        public IActionResult GetEmployeeById(int EmployeeId)
+        [HttpGet("{id}")]
+        public IActionResult GetEmployeeById(int id)
         {
-            var employee = dbContext.Employees.FirstOrDefault(e => e.EmployeeId == EmployeeId);
+            var employee = dbContext.Employees.FirstOrDefault(e => e.EmployeeId == id);
             if (employee == null)
             {
                 return NotFound();
