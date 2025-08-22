@@ -1,0 +1,34 @@
+.card{
+
+    border: 1px solid green;
+    border-radius: 5px;
+
+    width:25pc;
+    margin:10pc auto;
+    height:25pc;
+    background: black;
+}
+
+.card_tittle{
+
+    margin: 10px auto;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input{
+
+    margin-left:6pc;
+    margin-top:2pc;
+}
+
+button{
+
+     margin-left:10pc;
+      margin-top:3pc;
+
+}
+

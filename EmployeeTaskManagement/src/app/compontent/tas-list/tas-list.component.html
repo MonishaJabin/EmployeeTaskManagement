@@ -1,0 +1,51 @@
+<div class="container" style="margin-left:3pc;margin-top: 3pc;">
+
+    <button type="button" [routerLink]="['/taskform']" class="btn btn-success">AddTask</button>
+        
+
+    </div>
+
+    <div class="container">
+   <table class="table-container">
+    <tr>
+      <th>TaskId</th>
+      <th> Title</th>
+       <th>Description</th>
+        <th> DueDate</th>
+         <th> Status</th>
+          <th> EmployeeId</th>
+           <th> Action</th>
+             </tr>
+  @for (item of taskList; track $index )
+  {
+    <tr>
+      <td>{{item.taskId}}</td>
+      <td>{{item.title}}</td>
+       <td>{{item.description}}</td>
+         <td>{{item.dueDate}}</td>
+         <td>{{item.status}}</td>
+          <td>{{item.employeeId}}</td>
+        
+
+
+
+
+
+
+           <td>
+         <button type="button" class="btn btn-danger" (click)="onDelete(item.taskId)">
+          Delete
+           </button>&nbsp;&nbsp;&nbsp;
+            
+            <button type="button" class="btn btn-primary"  [routerLink]="['/taskfor',item.taskId]">Edit</button>
+           </td>
+            
+      
+    </tr>
+}
+   
+     
+      
+  </table>
+</div>
+

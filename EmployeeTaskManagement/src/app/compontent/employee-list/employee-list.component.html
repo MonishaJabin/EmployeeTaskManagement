@@ -1,0 +1,41 @@
+<div class="container" style="margin-left:3pc;margin-top: 3pc;">
+
+    <button type="button" [routerLink]="['/employee-post']" class="btn btn-success">AddEmployee</button>
+        
+
+    </div>
+
+    <div class="container">
+   <table class="table-container">
+    <tr>
+      <th>EmployeeId</th>
+      <th>Name</th>
+       <th>Email</th>
+        <th>Department</th>
+         <th>JoiningDate</th>
+          <th>Action</th>
+             </tr>
+  @for (item of employeeList; track $index )
+  {
+    <tr>
+      <td>{{item.employeeId}}</td>
+      <td>{{item.name}}</td>
+       <td>{{item.email}}</td>
+        <td>{{item.department}}</td>
+         <td>{{item.joiningDate}}</td>
+          <td>
+         <button type="button" class="btn btn-danger" (click)="onDelete(item.employeeId)">
+          Delete
+           </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button type="button" class="btn btn-primary" (click)="onEdit(item.employeeId)">Edit</button>
+           </td>
+            
+      
+    </tr>
+}
+   
+     
+      
+  </table>
+</div>

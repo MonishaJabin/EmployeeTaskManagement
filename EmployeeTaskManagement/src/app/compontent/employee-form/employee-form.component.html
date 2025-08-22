@@ -1,0 +1,50 @@
+<div class="container mb-8">
+    <h2  style="margin-left:8pc; margin-top:3pc;">Employee Form</h2>
+  
+    <div style=" margin-top:3pc;">
+    <form [formGroup]="employeeform">
+        <!-- Name -->
+        <div class="row mb-3">
+            <div class="col-7">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" class="form-control"   formControlName="name">
+            </div>
+            </div>
+
+            <div class="row mb-3"> 
+            <div class="col-7">
+                <label for="class" class="form-label">Email</label>
+                <input type="text" class="form-control"  formControlName="email">
+            </div>
+        </div>
+  
+      
+        <div class="row mb-3">
+            <div class="col-7">
+                <label for="medium" class="form-label">Department</label>
+                <input type="text" class="form-control" id="medium" formControlName="department">
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-7">
+                <label for="dob" class="form-label">JoiningDate</label>
+                <input type="date" class="form-control" id="dob" formControlName="joiningDate">
+            </div>
+        </div>
+  
+       
+    <div class="row mb-3">
+             <div class="col-4">
+        <button type="submit" class="btn btn-primary" (click)="onPost()" style="margin-top:3pc;">Submit</button>
+        </div>
+          <div class="col-4">
+            <button type="button"  style="margin-left:10pc;margin-top:3pc;"  class="btn btn-danger" [routerLink]="['/employee-list']" >Back</button>
+
+        </div>
+        </div>
+    </form>
+  </div>
+  </div>
+  
+

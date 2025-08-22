@@ -1,0 +1,13 @@
+.container{
+    height:40pc;
+    width:30pc;
+    border: radius 2px;
+    border:2px solid rgb(3, 12, 3);
+    margin:3px;
+    margin-left:20pc;
+    margin-top:3pc;
+  }
+
+ form{
+    margin-left:2pc;
+  }

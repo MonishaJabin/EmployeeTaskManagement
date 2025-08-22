@@ -1,0 +1,61 @@
+<div class="container mb-8">
+    <h2  style="margin-left:8pc; margin-top:3pc;">Task Form</h2>
+  
+    <div style=" margin-top:3pc;">
+    <form [formGroup]="taskForm">
+        <!-- Name -->
+        <div class="row mb-3">
+            <div class="col-7">
+                <label for="Name" class="form-label">Title</label>
+                <input type="text" class="form-control"   formControlName="title">
+            </div>
+        </div> 
+
+            <div class="row mb-3">
+            <div class="col-7">
+                <label for="class" class="form-label">  Description</label>
+                <input type="text" class="form-control"  formControlName="description">
+            </div>
+        </div>
+  
+      
+        <div class="row mb-3">
+            <div class="col-7">
+                <label for="medium" class="form-label"> status</label>
+                  <select class ="form-Select"  class = "form-control"    formControlName="status">
+            <option value ="pending">Pending</option>
+            <option value ="In Progress">IN Progress</option>
+            <option value ="Complete">Complete</option>
+         </select>
+            </div>
+            </div>
+
+            <div class="row mb-3">
+            <div class="col-7">
+                <label for="date" class="form-label"> DueDate</label>
+                <input type="datetime-local" class="form-control" id="date" formControlName="dueDate">
+            </div>
+        </div>
+
+          <div class="row mb-3">
+            <div class="col-7">
+                <label for="Name" class="form-label">EmployeeId</label>
+                <input type="text" class="form-control"   formControlName="employeeId">
+            </div>
+          </div>
+  
+       
+    <div class="row mb-3">
+             <div class="col-4">
+        <button type="submit" class="btn btn-primary" (click)="onPost()" style="margin-top:1pc;">Submit</button>
+        </div>
+          <div class="col-4">
+            <button type="button"  style="margin-left:10pc;margin-top:1pc;"  class="btn btn-danger" [routerLink]="['/tasklist']" >Back</button>
+
+        </div>
+        </div>
+    </form>
+  </div>
+  </div>
+  
+

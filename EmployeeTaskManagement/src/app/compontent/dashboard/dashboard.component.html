@@ -1,0 +1,86 @@
+<div class="container mt-4">
+      <h2>📊 Task Dashboard</h2>
+
+      <!-- Summary Cards -->
+      <div class="row text-center mb-4">
+        <div class="col-md-4">
+          <div class="card bg-warning text-dark shadow">
+            <div class="card-body">
+              <h5>Pending</h5>
+              <h3>{{ summary.pending }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-info text-dark shadow">
+            <div class="card-body">
+              <h5>In Progress</h5>
+              <h3>{{ summary.inProgress }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-success text-white shadow">
+            <div class="card-body">
+              <h5>Completed</h5>
+              <h3>{{ summary.completed }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label>Filter by Employee</label>
+  <select class="form-select" [(ngModel)]="selectedEmployee" (change)="filterTasks()">            <option value="">All Employees</option>
+            <option *ngFor="let emp of employees" [value]="emp.employeeId">
+              {{ emp.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>Filter by Status</label>
+          <select class="form-select" [(ngModel)]="selectedStatus" (change)="filterTasks()">
+            <option value="">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Task List -->
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Employee</th>
+              <th>Status</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of filteredTasks">
+              <td>{{ task.title }}</td>
+              <td>{{ task.description }}</td>
+              <td>{{ getEmployeeName(task.employeeId) }}</td>
+              <td>
+                <span class="badge"
+                  [ngClass]="{
+                    'bg-warning text-dark': task.status === 'Pending',
+                    'bg-info text-dark': task.status === 'In Progress',
+                    'bg-success': task.status === 'Completed'
+                  }">
+                  {{ task.status }}
+                </span>
+              </td>
+              <td>{{ task.dueDate | date:'shortDate' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

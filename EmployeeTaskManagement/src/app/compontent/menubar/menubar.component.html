@@ -1,0 +1,14 @@
+ <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+  <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">Employee Task Manager System</a>
+        <ul class="navbar-nav">
+           <button class="btn button1" [routerLink]="['/employee']" (click)="onclick()">Employee</button>
+        <button class="btn button1" [routerLink]="['/task']" (click)="onTask()">Task</button>
+        <button class="btn button1" [routerLink]="['/dashboard']">Dashboard</button>
+        <button class="btn button1" [routerLink]="['']" >LogOut</button>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
